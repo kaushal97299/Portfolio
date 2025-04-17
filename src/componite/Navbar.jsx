@@ -44,9 +44,9 @@ const Navbar = () => {
         <li className='li1'><Link to="/Skills" onClick={closeMenu}>Skills</Link></li>
         <li className='li1'><Link to="#contact" onClick={closeMenu}>Contact</Link></li>
         <li className='li2'>
-          <Link to="/public/Kaushal Resume.pdf" download className="resume-btn" onClick={closeMenu}>
+          <a href="/public/Kaushal Resume.pdf" download className="resume-btn" onClick={closeMenu}>
             Download Resume
-          </Link>
+          </a>
         </li>
       </ul>
 
