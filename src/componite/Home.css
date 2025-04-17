@@ -152,7 +152,7 @@
   height: 300px;
   border-radius: 50%;
   background-color: var(--primary);
-  background-image: url('src/images/MONU.jpg');
+  background-image: url('../images/MONU.jpg');
   background-size: cover;
   background-position: center;
   border: 5px solid var(--primary);

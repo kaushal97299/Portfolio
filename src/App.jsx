@@ -6,6 +6,7 @@ import Home from "./componite/HomePage";
 import About from "./componite/About";
 import Skills from "./componite/Skill";
 import Projects from "./componite/Project";
+import Footer from "./componite/Footer";
 
 function App() {
 
@@ -20,7 +21,10 @@ function App() {
      <Route path="/About" element={<About/>} />
       <Route path="/Skills" element={<Skills/>} />
       <Route path="/Projects" element={<Projects/>} />
+      {/* <Route path="/Footer" element={<Footer/>} /> */}
      </Routes>
+
+      <Footer/>
      </Router>
      
     </>
