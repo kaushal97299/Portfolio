@@ -27,7 +27,7 @@ const Footer = () => {
             </p>
             <a 
               href={resumeUrl} 
-              download="../images/Kaushal Resume.pdf"
+              download="Kaushal Resume.pdf"
               className="resume-button"
             >
               Download Resume <FiDownload className="download-icon" />
