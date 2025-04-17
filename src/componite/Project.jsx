@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Projects.css';
 import EcommerceImg from '../images/Screenshot 2025-04-16 022323.png';
 // import PortfolioImg from '../assets/portfolio.jpg';
-// import TaskAppImg from '../assets/taskapp.jpg';
+import TaskAppImg from '../images/Screenshot 2025-04-18 001629.png';
 
 const Projects = () => {
   return (
@@ -62,13 +62,13 @@ const Projects = () => {
           <div className="project-card">
             <div className="project-image-container">
               <img 
-                src="" 
-                alt="Task Management App" 
+                src={TaskAppImg} 
+                alt="Calculator" 
                 className="project-thumbnail"
               />
               <div className="project-hover-content">
                 <Link
-                  to="#"
+                  to="https://advncecalculator.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-link"
@@ -76,7 +76,7 @@ const Projects = () => {
                   <FaExternalLinkAlt /> Live Demo
                 </Link>
                 <Link
-                  to="https://github.com/yourusername/taskapp"
+                  to="https://github.com/kaushal97299/Calculater"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-link"
@@ -86,8 +86,8 @@ const Projects = () => {
               </div>
             </div>
             <div className="project-content">
-              <h3>Task Management App</h3>
-              <p>Kanban-style task manager with drag-and-drop functionality</p>
+              <h3>Calculator</h3>
+              <p>A simple and responsive calculator built using React.</p>
               <div className="project-tags">
                 <span>React</span>
                 {/* <span>Firebase</span>
@@ -96,43 +96,7 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Project 3 - Directly written */}
-          <div className="project-card">
-            <div className="project-image-container">
-              <img 
-                src="" 
-                alt="Portfolio Website" 
-                className="project-thumbnail"
-              />
-              <div className="project-hover-content">
-                <Link
-                  to="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  <FaExternalLinkAlt /> Live Demo
-                </Link>
-                <Link
-                  to="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  <FaGithub /> Code
-                </Link>
-              </div>
-            </div>
-            <div className="project-content">
-              <h3>Portfolio Website</h3>
-              <p>Modern responsive portfolio with animations</p>
-              <div className="project-tags">
-                <span>React</span>
-                <span>CSS3</span>
-                <span>Animations</span>
-              </div>
-            </div>
-          </div>
+         
         </div>
       </div>
     </section>
