@@ -1,0 +1,221 @@
+/* Navbar.css */
+
+/* Base Styles */
+.navbb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background-color: rgba(10, 25, 47, 0.9);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin-left: -1%;
+  z-index: 1000;
+  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.brand {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: #64ffda;
+  text-decoration: none;
+  font-family: 'SF Mono', monospace;
+  animation: fadeInDown 0.8s ease-out both;
+}
+
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  margin-right: 6%;
+}
+
+.navbar-links li {
+  position: relative;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Stagger animations for each nav item */
+.navbar-links li:nth-child(1) { animation-delay: 0.1s; }
+.navbar-links li:nth-child(2) { animation-delay: 0.2s; }
+.navbar-links li:nth-child(3) { animation-delay: 0.3s; }
+.navbar-links li:nth-child(4) { animation-delay: 0.4s; }
+.navbar-links li:nth-child(5) { animation-delay: 0.5s; }
+.navbar-links li:nth-child(6) { animation-delay: 0.6s; }
+
+.li1 a {
+  color: #ccd6f6;
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+  font-weight: 500;
+  text-decoration: none;
+  font-family: 'Calibre', sans-serif;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  display: inline-block;
+}
+
+.li1 a:hover {
+  color: #64ffda;
+  transform: translateY(-3px);
+}
+
+/* Underline Animation */
+.li1 a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #64ffda;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.li1 a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Resume Button */
+.li2 .resume-btn {
+  background-color: transparent;
+  color: #64ffda;
+  border: 1px solid #64ffda;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  font-family: 'SF Mono', monospace;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+}
+
+.li2 .resume-btn:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -10px rgba(100, 255, 218, 0.5);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #64ffda;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: rotate(90deg);
+}
+
+/* Mobile Menu Animation */
+@keyframes mobileMenuIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mobileMenuOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(75%, 300px);
+    height: 100vh;
+    background-color: rgba(10, 25, 47, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .navbar-links.active {
+    transform: translateX(0);
+    animation: mobileMenuIn 0.5s ease-out;
+  }
+
+  .navbar-links:not(.active) {
+    animation: mobileMenuOut 0.5s ease-out;
+  }
+
+  .hamburger {
+    display: block;
+    margin-right: 10%;
+  }
+
+  .li1 a {
+    font-size: 1.2rem;
+  }
+
+  .li1 a:hover {
+    transform: translateX(5px);
+  }
+
+  .li1 a::after {
+    display: none;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Effect */
+.navbb.scrolled {
+  padding: 1rem 5%;
+  background-color: rgba(10, 25, 47, 0.98);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

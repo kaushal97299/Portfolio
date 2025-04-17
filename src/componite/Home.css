@@ -1,0 +1,346 @@
+/* Home.css */
+*{
+  margin: 0;
+  padding: 0;;
+}
+/* Color Scheme */
+:root {
+  --primary: #64ffda;
+  --secondary: #0a192f;
+  --light: #ccd6f6;
+  --dark: #020c1b;
+  --gray: #8892b0;
+}
+
+/* Base Styles */
+.home-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--secondary);
+  color: var(--light);
+  /* width: 100%; */
+  /* margin-left: -2%; */
+  margin-top: 5%;
+}
+
+.home-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Typography */
+.intro-text {
+  color: var(--primary);
+  margin-top: 6%;
+  font-family: 'SF Mono', monospace;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.name-heading {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  margin: 0;
+  color: var(--light);
+  line-height: 1.1;
+  animation: slideInUp 0.8s ease-out 0.4s both;
+}
+
+.title-heading {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 600;
+  margin: 0.5rem 0 1.5rem;
+  color: var(--gray);
+  animation: slideInUp 0.8s ease-out 0.6s both;
+}
+
+.description {
+  max-width: 540px;
+  margin: 1.5rem 0 2rem;
+  line-height: 1.6;
+  color: var(--gray);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  animation: fadeIn 0.8s ease-out 0.8s both;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  animation: fadeIn 0.8s ease-out 1s both;
+}
+
+.social-icon {
+  color: var(--light);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.social-icon:hover {
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.social-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover::after {
+  transform: scaleX(1);
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.75rem;
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation: fadeIn 0.8s ease-out 1.2s both;
+}
+
+.cta-button:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -10px rgba(100, 255, 218, 0.5);
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .arrow-icon {
+  transform: translateY(3px);
+}
+
+/* Hero Image */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  background-image: url('src/images/MONU.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 5px solid var(--primary);
+  box-shadow: 0 20px 30px -15px rgba(100, 255, 218, 0.3);
+  animation: float 6s ease-in-out infinite, fadeIn 0.8s ease-out 1s both;
+}
+
+/* Background Circles */
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.15;
+  z-index: 1;
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  background-color: var(--primary);
+  top: -150px;
+  right: -150px;
+  animation: pulse 8s ease infinite;
+}
+
+.circle-2 {
+  width: 200px;
+  height: 200px;
+  background-color: #ff6482;
+  bottom: -100px;
+  left: -100px;
+  animation: pulse 10s ease infinite 2s;
+}
+
+.circle-3 {
+  width: 150px;
+  height: 150px;
+  background-color: #6482ff;
+  top: 50%;
+  left: 30%;
+  animation: pulse 12s ease infinite 4s;
+}
+
+/* Add these styles to your existing Home.css */
+
+/* Contact Information */
+.contact-info {
+  margin: 1.5rem 0;
+  animation: fadeIn 0.8s ease-out 1s both;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.contact-icon {
+  color: var(--primary);
+  margin-right: 1rem;
+  font-size: 1.1rem;
+}
+
+.contact-link {
+  color: var(--gray);
+  text-decoration: none;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+/* Adjust social links margin to account for new contact info */
+.social-links {
+  margin: 1rem 0 2rem;
+}
+.cursor {
+  display: inline-block;
+  animation: blink 1s step-start infinite;
+  color: #555;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-info {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+  }
+  
+  .contact-link {
+    font-size: 0.85rem;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  .description {
+    max-width: 100%;
+    margin: 1rem auto 2rem;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .hero-image {
+    margin-top: 3rem;
+  }
+  
+  .image-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .bg-circle {
+    display: none;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
