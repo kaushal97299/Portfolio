@@ -14,7 +14,7 @@ import './Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const resumeUrl = '/public/Kaushal Resume.pdf'; // Update with your resume path
+  const resumeUrl = '/Kaushal Resume.pdf'; // Update with your resume path
 
   return (
     <footer className="footer" id="contact">
