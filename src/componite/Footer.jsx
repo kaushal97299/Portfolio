@@ -77,7 +77,7 @@ const Footer = () => {
                 <FaGithub />
               </a>
               <a 
-                href="https://linkedin.com/in/yourusername" 
+                href="https://www.linkedin.com/in/kaushal-gauttam-839963275" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-icon"
@@ -95,7 +95,7 @@ const Footer = () => {
                 <FaTwitter />
               </a>
               <a 
-                href="https://instagram.com/yourusername" 
+                href=" https://www.instagram.com/kaushalgauttam?igsh=MXF1Zzk5cXhuY2pjZg==" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-icon"
