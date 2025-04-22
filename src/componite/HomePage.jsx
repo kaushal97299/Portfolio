@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaArrowDown, FaEnvelope, FaPhone } from 'react-icons/fa';
-import { TypeAnimation } from 'react-type-animation';
 import './Home.css';
 
 const Home = () => {
@@ -12,84 +11,69 @@ const Home = () => {
         <div className="bg-circle circle-1"></div>
         <div className="bg-circle circle-2"></div>
         <div className="bg-circle circle-3"></div>
-
+        
         <div className="home-content">
           <h4 className="intro-text">Hi, my name is</h4>
           <h1 className="name-heading">Kaushal</h1>
-
-          <h2 className="title-heading">
-            <TypeAnimation
-              sequence={[
-                'I build things for the web.',
-                2000,
-                'I create modern web apps.',
-                2000,
-                'I design responsive UIs.',
-                2000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
-          </h2>
-
+          <h2 className="title-heading">I build things for the web.</h2>
+          
           <p className="description">
-            I'm a MERN stack developer specializing in building exceptional digital experiences. 
+            I'm a Mern stack developer specializing in building exceptional digital experiences. 
             Currently focused on creating accessible, human-centered products.
           </p>
-
+          
           {/* Contact Information */}
           <div className="contact-info">
             <div className="contact-item">
               <FaEnvelope className="contact-icon" />
-              <a
-                href="mailto:kaushalsharma97299@gmail.com"
+              <Link
+                to="mailto:kaushalsharma97299@gmail.com" 
                 className="contact-link"
-                target="_blank"
+                target="_blank" 
                 rel="noopener noreferrer"
               >
                 kaushalsharma97299@gmail.com
-              </a>
+              </Link>
             </div>
             <div className="contact-item">
               <FaPhone className="contact-icon" />
-              <a
-                href="tel:+919729958926"
+              <Link
+                to="tel:+919729958926" 
                 className="contact-link"
-                target="_blank"
+                target="_blank" 
                 rel="noopener noreferrer"
               >
                 +91 9729958926
-              </a>
+              </Link>
             </div>
           </div>
 
           <div className="social-links">
-            <a
-              href="https://github.com/kaushal97299"
-              target="_blank"
+            <Link
+              to="https://github.com/kaushal97299" 
+              target="_blank" 
               rel="noopener noreferrer"
               className="social-icon"
               aria-label="GitHub"
             >
               <FaGithub />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/kaushal-gauttam-839963275"
-              target="_blank"
+            </Link>
+            <Link 
+              to="https://www.linkedin.com/in/kaushal-gauttam-839963275" 
+              target="_blank" 
               rel="noopener noreferrer"
               className="social-icon"
               aria-label="LinkedIn"
             >
               <FaLinkedin />
-            </a>
+            </Link>
           </div>
-
-          <a href="#about" className="cta-button">
+          
+          <Link to="#about" className="cta-button">
             Learn More <FaArrowDown className="arrow-icon" />
-          </a>
+          </Link>
         </div>
-
+        
         <div className="hero-image">
           <div className="image-container"></div>
         </div>
