@@ -5,14 +5,16 @@ import './Navbar.css';
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [downloaded, setDownloaded] = useState(false);
 
   const toggleMenu = () => {
     setNavOpen(!navOpen);
-    if (!navOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = navOpen ? 'auto' : 'hidden';
+  };
+
+  const handleDownload = () => {
+    setDownloaded(true);
+    setTimeout(() => setDownloaded(false), 3000); // Reset after 3 seconds
   };
 
   useEffect(() => {
@@ -27,7 +29,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrolled]);
 
-  // Close menu when clicking on a link
   const closeMenu = () => {
     setNavOpen(false);
     document.body.style.overflow = 'auto';
@@ -44,8 +45,16 @@ const Navbar = () => {
         <li className='li1'><Link to="/Skills" onClick={closeMenu}>Skills</Link></li>
         <li className='li1'><Link to="#contact" onClick={closeMenu}>Contact</Link></li>
         <li className='li2'>
-          <a href="/public/Kaushal Resume.pdf" download className="resume-btn" onClick={closeMenu}>
-            Download Resume
+          <a 
+            href="/Kaushal Resume.pdf" 
+            download 
+            className="resume-btn" 
+            onClick={() => {
+              closeMenu();
+              handleDownload();
+            }}
+          >
+            {downloaded ? '✅ Downloaded' : 'Download Resume'}
           </a>
         </li>
       </ul>
