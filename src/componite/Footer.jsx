@@ -59,7 +59,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="footer-link">
-                <span>Based in: Your City, Country</span>
+                <span>Narnaund Hisar Haryana</span>
               </li>
             </ul>
           </div>
