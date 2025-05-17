@@ -3,7 +3,7 @@
   background-color: var(--dark-bg);
   color: var(--light-text);
   padding: 4rem 0 1.5rem;
-  position: relative;
+  /* position: relative; */
   overflow: hidden;
   
 }

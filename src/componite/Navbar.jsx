@@ -43,7 +43,7 @@ const Navbar = () => {
         <li className='li1'><Link to="/About" onClick={closeMenu}>About</Link></li>
         <li className='li1'><Link to="/Projects" onClick={closeMenu}>Projects</Link></li>
         <li className='li1'><Link to="/Skills" onClick={closeMenu}>Skills</Link></li>
-        <li className='li1'><Link to="#contact" onClick={closeMenu}>Contact</Link></li>
+        <li className='li1'><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
         <li className='li2'>
           <a 
             href="/Kaushal Resume.pdf" 
